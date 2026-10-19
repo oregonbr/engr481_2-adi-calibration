@@ -19,6 +19,15 @@
 //
 //-----------------------------------------------------------------------------
 
+// Measured distances from sensors to spatula surface
+static double d1;
+static double d2;
+static double d3;
+
+static double s1_xy[2];
+static double s2_xy[2];
+static double s3_xy[2];
+
 //-----------------------------------------------------------------------------
 //      __   __   __  ___  __  ___      __   ___  __
 //     |__) |__) /  \  |  /  \  |  \ / |__) |__  /__`
@@ -39,7 +48,7 @@ int main(void)
     /* Replace with your application code */
     while (1) 
     {
-        
+
     }
 }
 
