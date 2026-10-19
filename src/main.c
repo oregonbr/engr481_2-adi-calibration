@@ -7,9 +7,22 @@
 #include <stdio.h>
 #include <math.h>
 
-#ifndef M_PI
 #define M_PI 3.14159265358979323846
-#endif
+
+// struct f/ 2D point location (might need 3D struct in future depending on laser mounting)
+typedef struct {
+    double x;
+    double y;
+} point2D;
+
+// output structure for pitch and roll angles
+typedef struct {
+    double pitch_deg;
+    double roll_deg;
+    double pitch_rad;
+    double roll_rad;
+} spatulatilt;
+
 //-----------------------------------------------------------------------------
 //     ___      __   ___  __   ___  ___  __
 //      |  \ / |__) |__  |  \ |__  |__  /__`
@@ -53,7 +66,7 @@ int main(void)
     /* Replace with your application code */
     while (1) 
     {
-
+        
     }
 }
 
@@ -63,6 +76,8 @@ int main(void)
 //     |    |  \ |  \/  /~~\  |  |___
 //
 //-----------------------------------------------------------------------------
+
+private 
 
 //-----------------------------------------------------------------------------
 //        __   __   __
