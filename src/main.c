@@ -21,7 +21,7 @@ typedef struct {
     double roll_deg;
     double pitch_rad;
     double roll_rad;
-} spatulatilt;
+} spatulaTilt;
 
 //-----------------------------------------------------------------------------
 //     ___      __   ___  __   ___  ___  __
@@ -76,6 +76,38 @@ int main(void)
 //     |    |  \ |  \/  /~~\  |  |___
 //
 //-----------------------------------------------------------------------------
+
+// THE FOLLOWING WAS WHAT VSCODE AUTOMATICALLY GENERATED AFTER I STARTED WRITING
+// "spatulaTilt".... IT PROBABLY IS NOT RIGHT!
+
+spatulaTilt calculate_spatula_tilt(double d1, double d2, double d3, point2D s1_xy, point2D s2_xy, point2D s3_xy) {
+    
+    spatulaTilt result = {0.0, 0.0, 0.0, 0.0};
+
+    // Calculate the differences in distances
+    double delta_d12 = d1 - d2;
+    double delta_d13 = d1 - d3;
+
+    // Calculate the differences in sensor positions
+    double delta_x12 = s2_xy.x - s1_xy.x;
+    double delta_y12 = s2_xy.y - s1_xy.y;
+    double delta_x13 = s3_xy.x - s1_xy.x;
+    double delta_y13 = s3_xy.y - s1_xy.y;
+
+    // !!need to enforce upward-pointing normal vector (+z)!!
+
+    // Calculate pitch and roll angles in radians
+    // CHECK THIS!!!
+    result.pitch_rad = atan2(delta_d12, sqrt(delta_x12 * delta_x12 + delta_y12 * delta_y12));
+    result.roll_rad = atan2(delta_d13, sqrt(delta_x13 * delta_x13 + delta_y13 * delta_y13));
+
+    // Convert to degrees
+    // CHECK THIS!!!
+    tilt.pitch_deg = tilt.pitch_rad * (180.0 / M_PI);
+    tilt.roll_deg = tilt.roll_rad * (180.0 / M_PI);
+
+    return tilt;
+}
 
 //-----------------------------------------------------------------------------
 //        __   __   __
